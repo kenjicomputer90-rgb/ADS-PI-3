@@ -10,11 +10,10 @@ public class Main extends Application {
     @Override
     public void start(Stage stage) throws Exception {
 
-        FXMLLoader loader = new FXMLLoader(
-            getClass().getResource("/com/loja_roupas/View/TelaInicial.fxml")
-        );
+        FXMLLoader fxmlLoader =
+                new FXMLLoader(getClass().getResource("/com/loja_roupas/View/Main.fxml"));
 
-        Scene scene = new Scene(loader.load(), 1000, 650);
+        Scene scene = new Scene(fxmlLoader.load());
 
         stage.setTitle("Loja de Roupas");
         stage.setScene(scene);
@@ -22,6 +21,6 @@ public class Main extends Application {
     }
 
     public static void main(String[] args) {
-        launch();
+        launch(args);
     }
 }

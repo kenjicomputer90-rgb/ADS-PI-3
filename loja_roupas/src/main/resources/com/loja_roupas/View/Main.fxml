@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.loja_roupas.Controller.MainController"
+            stylesheets="@../css/style.css">
+
+    <!-- SIDEBAR -->
+    <left>
+        <VBox styleClass="sidebar">
+
+            <Label text="TRAJELOC"
+                   styleClass="logo"/>
+
+            <Label text="Painel de Controle v1.0"
+                   styleClass="version"/>
+
+            <VBox VBox.vgrow="ALWAYS">
+
+                <Button text="Estoque de Trajes"
+                        onAction="#abrirEstoque"
+                        styleClass="sidebar-button"/>
+
+                <Button text="Clientes"
+                        onAction="#abrirClientes"
+                        styleClass="sidebar-button"/>
+
+                <Button text="Funcionários"
+                        onAction="#abrirFuncionarios"
+                        styleClass="sidebar-button"/>
+
+            </VBox>
+
+            <Label text="Conectado em: localhost:3306"
+                   styleClass="connection"/>
+
+        </VBox>
+    </left>
+
+    <!-- ÁREA DAS TELAS -->
+    <center>
+        <VBox fx:id="content"
+              styleClass="content"/>
+    </center>
+
+</BorderPane>
