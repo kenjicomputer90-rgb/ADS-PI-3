@@ -17,7 +17,7 @@
         </property>
 
         <property name="hibernate.connection.username">
-            root
+            kenji
         </property>
 
         <property name="hibernate.connection.password">
