@@ -1,10 +1,8 @@
 package com.loja_roupas.Controller;
 
-import org.hibernate.Session;
-import org.hibernate.Transaction;
 
+import com.loja_roupas.dao.ClienteDAO;
 import com.loja_roupas.model.Cliente;
-import com.loja_roupas.util.HibernateUtil;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -13,22 +11,7 @@ public class TelaInicialController {
 
     @FXML
     private void abrirProdutos(ActionEvent event) {
-    	 try (Session session = HibernateUtil
-                 .getSessionFactory()
-                 .openSession()) {
-
-             Transaction transaction = session.beginTransaction();
-
-             Cliente cliente = new Cliente(
-                     "Eduardo",
-                     "19999999999"
-             );
-
-             session.persist(cliente);
-
-             transaction.commit();
-         }
-
+    	cadastrar();
          
         System.out.println("Abrindo produtos...");
     }
@@ -46,6 +29,18 @@ public class TelaInicialController {
     @FXML
     private void abrirEstoque(ActionEvent event) {
         System.out.println("Abrindo estoque...");
+    }
+    
+    private final ClienteDAO clienteDAO = new ClienteDAO();
+
+    public void cadastrar() {
+
+        Cliente cliente = new Cliente();
+
+        cliente.setNome("Eduardo");
+        cliente.setTelefone("19999999999");
+
+        clienteDAO.salvar(cliente);
     }
     
     //HibernateUtil.getSessionFactory().close();

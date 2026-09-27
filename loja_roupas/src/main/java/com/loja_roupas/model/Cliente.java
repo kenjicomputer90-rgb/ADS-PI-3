@@ -22,5 +22,15 @@ public class Cliente {
         this.telefone = telefone;
     }
 
+	public void setTelefone(String telefone) {
+		// TODO Auto-generated method stub
+		this.telefone=telefone;
+	}
+
+	public void setNome(String nome) {
+		// TODO Auto-generated method stub
+		this.nome=nome;
+	}
+
     // getters e setters
 }
