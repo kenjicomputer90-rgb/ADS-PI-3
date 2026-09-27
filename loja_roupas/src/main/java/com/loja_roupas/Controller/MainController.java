@@ -33,6 +33,11 @@ public class MainController {
         carregarTela("/com/loja_roupas/View/Funcionarios.fxml");
     }
 
+    @FXML
+    private void abrirInicio() {
+        carregarTela("/com/loja_roupas/View/TelaInicial.fxml");
+    }
+
     private void carregarTela(String caminho) {
         try {
             FXMLLoader loader =

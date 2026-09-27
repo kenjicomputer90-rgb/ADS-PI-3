@@ -22,6 +22,10 @@
 
             <VBox VBox.vgrow="ALWAYS">
 
+                <Button text="Início"
+                        onAction="#abrirInicio"
+                        styleClass="sidebar-button"/>
+
                 <Button text="Estoque de Trajes"
                         onAction="#abrirEstoque"
                         styleClass="sidebar-button"/>
